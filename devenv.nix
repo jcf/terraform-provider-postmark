@@ -11,6 +11,7 @@
     # Development
     just
     tree
+    zsh
 
     # Go tools
     goreleaser

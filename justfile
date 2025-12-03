@@ -51,7 +51,7 @@ clean:
 # Create a new release (requires GPG_PRIVATE_KEY and PASSPHRASE env vars)
 [group('release')]
 tag version:
-    #!/usr/bin/env bash
+    #!/usr/bin/env zsh
     set -e
     if [[ ! "{{ version }}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
         echo >&2 "Error: Version must be in format v0.0.0"
@@ -59,6 +59,14 @@ tag version:
     fi
     git tag -a {{ version }} -m "Release {{ version }}"
     echo >&2 "✅ Tagged {{ version }}. Push with: git push origin {{ version }}"
+
+# Release via goreleaser
+[group('release')]
+release:
+    #!/usr/bin/env zsh
+    set -e
+    export GITHUB_TOKEN="$(gh auth token)"
+    goreleaser release --clean
 
 # Test goreleaser configuration without publishing
 [group('release')]

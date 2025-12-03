@@ -1,0 +1,24 @@
+[formatter.go]
+command = "gofmt"
+options = ["-w"]
+includes = ["*.go"]
+
+[formatter.just]
+command = "just"
+options = ["--unstable", "--fmt", "--justfile"]
+includes = ["justfile"]
+
+[formatter.nix]
+command = "alejandra"
+includes = ["*.nix"]
+
+[formatter.shell]
+command = "shfmt"
+options = ["-i", "2", "-ci", "-s", "-w"]
+includes = ["*.sh", "*.bash"]
+
+[formatter.yaml]
+command = "prettier"
+options = ["--cache", "--write"]
+includes = ["*.yaml", "*.yml"]
+excludes = [".github/**"]

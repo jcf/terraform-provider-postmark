@@ -65,3 +65,12 @@ go.work.sum
 
 # env file
 .env
+
+### devenv
+.devenv
+.devenv.flake.nix
+.direnv
+
+# Build artifacts
+dist/
+terraform-provider-postmark

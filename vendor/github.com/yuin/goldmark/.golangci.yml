@@ -9,7 +9,7 @@ issues:
         - errcheck
         - lll
   exclude:
-  - "Package util"
+    - "Package util"
 
 linters:
   disable-all: true

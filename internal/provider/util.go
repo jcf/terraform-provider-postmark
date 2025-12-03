@@ -9,11 +9,13 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/types/basetypes"
 )
 
+// TypeStringToInt64 converts a Terraform string type to int64.
 func TypeStringToInt64(value types.String) int64 {
 	valueInt, _ := strconv.ParseInt(value.ValueString(), 10, 64)
 	return valueInt
 }
 
+// TypeStringToInt converts a Terraform string type to int.
 func TypeStringToInt(value types.String) int {
 	return int(TypeStringToInt64(value))
 }

@@ -7,6 +7,7 @@ import (
 	"github.com/mrz1836/postmark"
 )
 
+// GetDataSourcePostmarkClient retrieves the Postmark client from the data source configuration.
 func GetDataSourcePostmarkClient(req datasource.ConfigureRequest, resp *datasource.ConfigureResponse) *postmark.Client {
 	if req.ProviderData == nil {
 		return nil

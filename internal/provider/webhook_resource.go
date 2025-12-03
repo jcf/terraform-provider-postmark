@@ -21,6 +21,7 @@ var (
 	_ resource.ResourceWithImportState = &webhookResource{}
 )
 
+// NewWebhookResource creates a new webhook resource.
 func NewWebhookResource() resource.Resource {
 	return &webhookResource{}
 }

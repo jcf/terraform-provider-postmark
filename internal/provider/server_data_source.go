@@ -14,6 +14,7 @@ import (
 
 var _ datasource.DataSource = (*serverDataSource)(nil)
 
+// NewServerDataSource creates a new server data source.
 func NewServerDataSource() datasource.DataSource {
 	return &serverDataSource{}
 }

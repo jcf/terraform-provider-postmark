@@ -20,6 +20,7 @@ var (
 	_ resource.ResourceWithImportState = &senderSignatureResource{}
 )
 
+// NewSenderSignatureResource creates a new sender signature resource.
 func NewSenderSignatureResource() resource.Resource {
 	return &senderSignatureResource{}
 }

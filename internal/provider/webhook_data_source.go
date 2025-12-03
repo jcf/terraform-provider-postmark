@@ -15,6 +15,7 @@ import (
 
 var _ datasource.DataSource = (*webhookDataSource)(nil)
 
+// NewWebhookDataSource creates a new webhook data source.
 func NewWebhookDataSource() datasource.DataSource {
 	return &webhookDataSource{}
 }

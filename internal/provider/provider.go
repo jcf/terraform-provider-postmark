@@ -12,6 +12,7 @@ import (
 
 var _ provider.Provider = &postmarkProvider{}
 
+// New creates a new Postmark provider.
 func New(version string) func() provider.Provider {
 	return func() provider.Provider {
 		return &postmarkProvider{

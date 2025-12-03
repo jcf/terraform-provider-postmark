@@ -14,6 +14,7 @@ import (
 
 var _ datasource.DataSource = (*senderSignatureDataSource)(nil)
 
+// NewSenderSignatureDataSource creates a new sender signature data source.
 func NewSenderSignatureDataSource() datasource.DataSource {
 	return &senderSignatureDataSource{}
 }

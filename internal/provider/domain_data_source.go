@@ -1,3 +1,4 @@
+// Package provider implements the Postmark Terraform provider.
 package provider
 
 import (
@@ -14,6 +15,7 @@ import (
 
 var _ datasource.DataSource = (*domainDataSource)(nil)
 
+// NewDomainDataSource creates a new domain data source.
 func NewDomainDataSource() datasource.DataSource {
 	return &domainDataSource{}
 }

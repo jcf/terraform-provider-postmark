@@ -1,3 +1,4 @@
+// Package main is the entry point for the Postmark Terraform provider.
 package main
 
 import (

@@ -20,6 +20,7 @@ var (
 	_ resource.ResourceWithImportState = &serverResource{}
 )
 
+// NewServerResource creates a new server resource.
 func NewServerResource() resource.Resource {
 	return &serverResource{}
 }

@@ -1,6 +1,8 @@
 # Visit https://golangci-lint.run/ for usage documentation
 # and information on other useful linters
 
+version: 2
+
 run:
   deadline: 3m
   concurrency: 8
@@ -10,13 +12,10 @@ run:
 
 output:
   formats:
-    - format: colored-line-number
-      path: stdout
+    colored-line-number: stdout
   print-issued-lines: false
   print-linter-name: true
-  path-prefix: ""
   sort-results: true
-  fix: false
 
 issues:
   max-issues-per-linter: 0
@@ -35,7 +34,7 @@ linters:
     - asciicheck
     - bidichk
     - bodyclose
-#    - contextcheck
+    #    - contextcheck
     - copyloopvar
     - durationcheck
     - errcheck
@@ -43,12 +42,8 @@ linters:
     - errorlint
     - gocritic
     - godot
-    - gofmt
-    - gofumpt
-    - goimports
-#    - gomoddirectives
+    #    - gomoddirectives
     - gosec
-    - gosimple
     - govet
     - ineffassign
     - makezero
@@ -63,9 +58,7 @@ linters:
     - reassign
     - revive
     - staticcheck
-    - stylecheck
     - tagliatelle
-    - tenv
     - testableexamples
     - thelper
     - tparallel
@@ -75,7 +68,14 @@ linters:
     - usestdlibvars
     - wastedassign
 
-linters-settings:linters-settings:
+formatters:
+  disable-all: true
+  enable:
+    - gofmt
+    - gofumpt
+    - goimports
+
+linters-settings:
   # See https://go-critic.com/overview.html
   gocritic:
     enabled-tags:

@@ -1,12 +1,12 @@
 language: go
 
 go:
-    - 1.x
-    - tip
+  - 1.x
+  - tip
 
 script:
-    - go test
+  - go test
 
 matrix:
-    allow_failures:
-        - go: tip
+  allow_failures:
+    - go: tip

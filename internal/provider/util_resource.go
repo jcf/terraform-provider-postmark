@@ -7,6 +7,7 @@ import (
 	"github.com/mrz1836/postmark"
 )
 
+// GetResourcePostmarkClient retrieves the Postmark client from the resource configuration.
 func GetResourcePostmarkClient(req resource.ConfigureRequest, resp *resource.ConfigureResponse) *postmark.Client {
 	if req.ProviderData == nil {
 		return nil

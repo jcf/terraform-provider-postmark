@@ -20,6 +20,7 @@ var (
 	_ resource.ResourceWithImportState = &domainResource{}
 )
 
+// NewDomainResource creates a new domain resource.
 func NewDomainResource() resource.Resource {
 	return &domainResource{}
 }

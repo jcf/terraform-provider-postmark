@@ -1,6 +1,6 @@
 module terraform-provider-postmark
 
-go 1.23
+go 1.24
 
 //replace github.com/mrz1836/postmark => /Users/marcuscarey/GolandProjects/postmark
 

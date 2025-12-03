@@ -36,8 +36,8 @@ testacc:
 [group('dev')]
 install:
     go build -gcflags="all=-N -l" -o terraform-provider-postmark
-    mkdir -p ~/.terraform.d/plugins/marcus.carey/terraform/postmark/1.0/darwin_arm64
-    mv terraform-provider-postmark ~/.terraform.d/plugins/marcus.carey/terraform/postmark/1.0/darwin_arm64/
+    mkdir -p ~/.terraform.d/plugins/jcf/terraform/postmark/1.0/darwin_arm64
+    mv terraform-provider-postmark ~/.terraform.d/plugins/jcf/terraform/postmark/1.0/darwin_arm64/
 
 # Clean build artifacts
 [group('dev')]

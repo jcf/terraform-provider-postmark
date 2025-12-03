@@ -13,10 +13,10 @@ func PostmarkProviderSchema(ctx context.Context) schema.Schema {
 	return schema.Schema{
 		Attributes: map[string]schema.Attribute{
 			"account_token": schema.StringAttribute{
-				Required:            true,
+				Optional:            true,
 				Sensitive:           true,
-				Description:         "The Account API token to use for API requests. Managed at https://account.postmarkapp.com/api_tokens.",
-				MarkdownDescription: "The Account API token to use for API requests. Managed at https://account.postmarkapp.com/api_tokens.",
+				Description:         "The Account API token to use for API requests. Managed at https://account.postmarkapp.com/api_tokens. Can also be set via the POSTMARK_ACCOUNT_TOKEN environment variable.",
+				MarkdownDescription: "The Account API token to use for API requests. Managed at https://account.postmarkapp.com/api_tokens. Can also be set via the `POSTMARK_ACCOUNT_TOKEN` environment variable.",
 			},
 		},
 	}

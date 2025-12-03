@@ -2,6 +2,7 @@ package provider
 
 import (
 	"context"
+	"os"
 	"terraform-provider-postmark/internal/provider/provider_postmark"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
@@ -38,8 +39,21 @@ func (p *postmarkProvider) Configure(ctx context.Context, req provider.Configure
 		return
 	}
 
-	println("Account Token:", data.AccountToken.String())
-	client := postmark.NewClient("[SERVER-TOKEN]", data.AccountToken.ValueString())
+	// Get account token from config or environment variable
+	accountToken := data.AccountToken.ValueString()
+	if accountToken == "" {
+		accountToken = os.Getenv("POSTMARK_ACCOUNT_TOKEN")
+	}
+
+	if accountToken == "" {
+		resp.Diagnostics.AddError(
+			"Missing Account Token",
+			"The account_token must be set either in the provider configuration or via the POSTMARK_ACCOUNT_TOKEN environment variable.",
+		)
+		return
+	}
+
+	client := postmark.NewClient("[SERVER-TOKEN]", accountToken)
 
 	// TODO determine how to test connection to fail earlier
 
